@@ -1,0 +1,11 @@
+mat-drawer-container,mat-drawer,mat-drawer-content{
+    height:100%;
+    
+}
+a{
+    text-decoration: none;
+    padding:10px;
+}
+a:hover{
+    color:white;
+}

@@ -11,11 +11,13 @@ import { QuickComponent } from './quick/quick.component';
 import { RadixComponent } from './radix/radix.component';
 import { SelectionComponent } from './selection/selection.component';
 import { ShellComponent } from './shell/shell.component';
+import { BucketComponent } from './bucket/bucket.component';
 
 
 const routes: Routes = [
   {path: '',component:WelcomeComponent},
   {path:'bubble',component:BubbleComponent},
+  {path:'bucket',component:BucketComponent},
   {path:'bucket-radix',component:BucketRadixComponent},
   {path:'counting',component:CountingComponent},
   {path:'heap',component:HeapComponent},
