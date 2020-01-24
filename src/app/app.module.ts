@@ -20,6 +20,7 @@ import { ShellComponent } from './shell/shell.component';
 import { RadixComponent } from './radix/radix.component';
 import { WelcomeComponent } from './navigation/welcome/welcome.component';
 import { AppMaterial } from './app-material.module';
+import { AppService } from './app.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { AppMaterial } from './app-material.module';
     BrowserAnimationsModule,
     AppMaterial
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

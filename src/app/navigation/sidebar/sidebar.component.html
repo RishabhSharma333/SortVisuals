@@ -1,1 +1,19 @@
-<p>sidebar works!</p>
+<div class="container">
+   <p>Generate Algo Specific Numbers</p>
+  <mat-form-field>
+  <mat-label>Select Algo </mat-label>
+  <mat-select [(value)]="selected_algo">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option.number" >{{option.alg}}
+    </mat-option>
+ </mat-select>
+ </mat-form-field>
+ </div>
+ <div>
+     <button mat-raised-button type="button" (click)="onGenerate()">Generate</button>
+     <div class="example-box" cdkDrag>
+        Drag me around
+      </div>
+</div>
+
+

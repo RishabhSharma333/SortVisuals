@@ -3,4 +3,5 @@ a
 padding:10px}
 a:hover{
     color:white;
+    border-bottom: 3px solid white;
 }

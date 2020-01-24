@@ -1,1 +1,11 @@
-<mat-toolbar> Bubble Sort</mat-toolbar>
+<div class="container">
+<mat-toolbar style="color: dimgray;"> Bubble Sort
+    <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Sort Now</button>
+</mat-toolbar>
+  <div cdkDropList *ngIf="bubbleArray.length>0"
+  cdkDropListOrientation="horizontal" 
+  class="number-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let num of bubbleArray" cdkDrag>{{num}}</div>
+  </div>
+ 
+</div>

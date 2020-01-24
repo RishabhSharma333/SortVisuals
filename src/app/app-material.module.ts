@@ -3,20 +3,28 @@ import {
     MatSidenavModule, 
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
-} from "@angular/material";
+    MatButtonModule,
+    MatSelectModule,
+    } from "@angular/material";
+import{DragDropModule} from "@angular/cdk/drag-drop";
 @NgModule({
     imports:[
      MatSidenavModule,
      MatToolbarModule,
      MatIconModule,
-     MatButtonModule
+     MatButtonModule,
+     MatSelectModule,
+     DragDropModule
+
     ],
     exports:[
      MatSidenavModule,
      MatToolbarModule,
      MatIconModule,
-     MatButtonModule
+     MatButtonModule,
+     MatSelectModule,
+     DragDropModule
+
     ]
 })
 export class AppMaterial{}
