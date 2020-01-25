@@ -26,11 +26,17 @@ drop(event: CdkDragDrop<number[]>) {
   moveItemInArray(this.bubbleArray, event.previousIndex, event.currentIndex);
 }
 onStart(){
-  if(this.bubbleArray.length>0){let arr:number[]=[];
-  var i:any;
-  for(i=0;i<7;i++){
-    arr[i]=this.bubbleArray[i];}
-   this.bubbleArray=arr;
+  if(this.bubbleArray.length>0){
+     let i:number;
+     let min=100000;
+     let mini;
+     for (i=0;i<this.bubbleArray.length;i++){
+       if(min>this.bubbleArray[i]){
+         min=this.bubbleArray[i];
+        mini=i;}
+        }
+        
+    
   }
   
 }

@@ -4,7 +4,12 @@
    
 
 }
-
+.example-boundary{
+    width:auto;
+    height:400px;
+    border:dotted;
+   
+}
 .number-list {
     width: 1000px;
     max-width: 100%;
@@ -28,6 +33,7 @@
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    /* width:70px; */
     cursor: move;
     background: white;
     font-size: 14px;
