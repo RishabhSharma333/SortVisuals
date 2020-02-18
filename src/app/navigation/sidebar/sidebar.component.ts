@@ -27,6 +27,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit(){}
   onGenerate(){
     // console.log(this.selected_algo);
+    this.appService.onClear();
     switch (this.selected_algo){
       case 1:{this.route.navigate(['/bubble']);this.appService.onBubble();break;}
       case 2:{this.route.navigate(['/bucket']);this.appService.onBucket();break;}

@@ -1,17 +1,92 @@
 <div class="container">
     <mat-toolbar style="color: darkgreen"> Bucket Sort
-        
+      <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Change Mode</button>
     </mat-toolbar>
-    <p>Welcome to practicing Bucket Sort</p>
-    <!-- <div class="example-boundary" *ngIf="bucketArray.length>0">
-      <div cdkDropList 
-      cdkDropListOrientation="horizontal" 
-      class="number-list" (cdkDropListDropped)="drop($event)">
-        <div class="example-box" 
-        *ngFor="let num of bubbleArray" 
-         cdkDragBoundary=".example-boundary" 
-         cdkDrag>{{num}}</div>
-      </div>
+    <p>Welcome to practicing Bucket Sort. <span style="color:cadetblue;text-align:right;">Mode-{{mode}}</span></p>
+    <div class="example-boundary" >
+      <div cdkDropListGroup>
+        <div class="example-container">
+          <p>Given Array</p>
+          <div
+            cdkDropList
+            [cdkDropListData]="bucketArray"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let num of bucketArray" cdkDrag>{{num}}</div>
+          </div>
+        </div>
+      
+        <div class="example-container">
+          <p>Ones</p>
+      
+          <div
+            cdkDropList
+            [cdkDropListData]="ones"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let num of ones" cdkDrag>{{num}}</div>
+          </div>
+        </div>
+        <div class="example-container">
+          <p>Twos</p>
+      
+          <div
+            cdkDropList
+            [cdkDropListData]="twos"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let num of twos" cdkDrag>{{num}}</div>
+          </div>
+        </div>
+        <div class="example-container">
+          <p>Threes</p>
+      
+          <div
+            cdkDropList
+            [cdkDropListData]="threes"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let num of threes" cdkDrag>{{num}}</div>
+          </div>
+        </div>
+        <div class="example-container">
+          <p>Fours</p>
+      
+          <div
+            cdkDropList
+            [cdkDropListData]="fours"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let num of fours" cdkDrag>{{num}}</div>
+          </div>
+        </div>
+        <div class="example-container">
+          <p>Fives</p>
+      
+          <div
+            cdkDropList
+            [cdkDropListData]="fives"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let num of fives" cdkDrag>{{num}}</div>
+          </div>
+        </div>
+        <div class="example-container">
+          <p>Sixes</p>
+      
+          <div
+            cdkDropList
+            [cdkDropListData]="sixes"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let num of sixes" cdkDrag>{{num}}</div>
+          </div>
+        </div>
+        </div>
     </div>
+
+  
+
+    <p style="color:brown">{{message}}</p>
      
-    </div> -->
+    </div>

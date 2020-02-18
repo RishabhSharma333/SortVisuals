@@ -11,9 +11,9 @@ export class BubbleComponent implements OnInit {
   constructor(private appService:AppService) { }
   bubbleArray:comp[]=[];
   message:string='';
-  len:number;
+  
   ngOnInit() {
-    this.len=this.message.length;
+    
     this.appService.sendArray.subscribe(elementsPresent=>{
       if(elementsPresent==1){
         console.log(elementsPresent);
@@ -37,12 +37,7 @@ drop(event: CdkDragDrop<number[]>) {
   else if(event.currentIndex-event.previousIndex!=1){ this.message='Wrong move, We operate Bubble Sort with neighbour indices';}
   else this.message='Fine move';
 }
-onStart(){
-  if(this.bubbleArray.length<=0){
-     return;
-  }
-  
-      }
+
 
 }
 class comp{

@@ -12,8 +12,8 @@ export class AppService{
   } 
   onBucket(){
     var i:number;
-    for(i=0;i<12;i++){
-    this.array.push(Math.floor(Math.random()*8)+1);
+    for(i=0;i<10;i++){
+    this.array.push(Math.floor(Math.random()*6)+1);
   }
   
   }
@@ -35,8 +35,8 @@ export class AppService{
   }
   onCounting(){
     var i:number;
-    for(i=0;i<12;i++){
-    this.array.push(Math.floor(Math.random()*10)+1);
+    for(i=0;i<9;i++){
+    this.array.push(Math.floor(Math.random()*5)+1);
   }
   
   }
@@ -90,4 +90,6 @@ export class AppService{
   
   }
 arrayget(){return this.array.slice();}
+onClear(){let arr:number[]=[];
+  this.array=arr;}
 }
