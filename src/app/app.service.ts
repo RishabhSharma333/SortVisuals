@@ -43,7 +43,7 @@ export class AppService{
   onHeap(){
     var i:number;
     for(i=0;i<12;i++){
-    this.array.push(Math.floor(Math.random()*100)+1);
+    this.array.push(Math.floor(Math.random()*99)+1);
   }
  
   }

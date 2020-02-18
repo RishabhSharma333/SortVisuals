@@ -50,26 +50,26 @@ export class BucketComponent implements OnInit {
           else{let id=event.container.id;
            
             if(id=='cdk-drop-list-1'){
-              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=1){this.message='Not Placed Correctly';break;}this.message='Right Placed';}
+              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=1){this.message='Not Placed Correctly';break;}this.message='Rightly Placed';}
             }
             if(id=='cdk-drop-list-2'){
-              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=2){this.message='Not Placed Correctly';break;}this.message='Right Placed';}
+              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=2){this.message='Not Placed Correctly';break;}this.message='Rightly Placed';}
             }
             
             if(id=='cdk-drop-list-3'){
-              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=3){this.message='Not Placed Correctly';break;}this.message='Right Placed';}
+              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=3){this.message='Not Placed Correctly';break;}this.message='Rightly Placed';}
             }
             
             if(id=='cdk-drop-list-4'){
-              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=4){this.message='Not Placed Correctly';break;}this.message='Right Placed';}
+              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=4){this.message='Not Placed Correctly';break;}this.message='Rightly Placed';}
             }
             
             if(id=='cdk-drop-list-5'){
-              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=5){this.message='Not Placed Correctly';break;}this.message='Right Placed';}
+              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=5){this.message='Not Placed Correctly';break;}this.message='Rightly Placed';}
             }
             
             if(id=='cdk-drop-list-6'){
-              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=6){this.message='Not Placed Correctly';break;}this.message='Right Placed';}
+              let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=6){this.message='Not Placed Correctly';break;}this.message='Rightly Placed';}
             }
             
           }

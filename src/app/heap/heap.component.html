@@ -1,4 +1,32 @@
 <div class="container">
-    <mat-toolbar style="color: darkcyan;"> Heap Sort
-        <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Sort Now</button>
-    </mat-toolbar>
+    <mat-toolbar style="color: dimgray;"> Heap Sort
+        <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Change Mode</button></mat-toolbar>
+    <p> Practicing Heap sort.  Mode:{{mode}} </p>
+    <div class="example-boundary" *ngIf="heapArray.length>0">
+        <div cdkDropListGroup>
+            <div class="example-container">
+              <p>Given array</p>
+            <div
+                cdkDropList
+                [cdkDropListData]="given"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of heapArray"  cdkDragBoundary=".example-boundary"cdkDrag 
+                style="font-size: larger;">{{item.value}}
+                <span style="color:darksalmon;font-size: smaller;" cdkDragBoundary=".example-boundary">{{i}}</span></div>
+              </div>
+            </div>
+          <div class="example-container">
+              <p>Use this as Priority Array</p>
+                 <div
+                cdkDropList
+                [cdkDropListData]="priority"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of priorityArray" cdkDragBoundary=".example-boundary" cdkDrag >{{item.value}}</div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <p style="color: red; font-size: larger;">{{message}}</p>
+    </div>

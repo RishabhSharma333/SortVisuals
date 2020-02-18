@@ -12,7 +12,7 @@ export class SidebarComponent implements OnInit {
     options =[
       {number:1,alg:'Bubble'},
       {number:2,alg:'Bucket'},
-      {number:3,alg:'Bucket-Radix'},
+      // {number:3,alg:'Bucket-Radix'},
       {number:4,alg:'Counting'},
       {number:5,alg:'Heap'},
       {number:6,alg:'Insertion'},
@@ -22,7 +22,6 @@ export class SidebarComponent implements OnInit {
       {number:10,alg:'Selection'},
       {number:11,alg:'Shell'}
     ]; 
-
   constructor(private appService:AppService, private route:Router){}
   ngOnInit(){}
   onGenerate(){

@@ -6,15 +6,21 @@
     <div class="example-boundary" >
       <div cdkDropListGroup>
         <div class="example-container">
-          <p>Given Array</p>
           <div
             cdkDropList
             [cdkDropListData]="bucketArray"
             class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let num of bucketArray" cdkDrag cdkDragLockAxis="x" cdkDragLockAxis="y">{{num}}</div>
+            <div class="example-box" *ngFor="let num of countingArray" cdkDrag cdkDragLockAxis="x" >{{num}}</div>
           </div>
         </div>
+        <mat-slider
+        thumbLabel
+         [displayWith]="formatLabel"
+         step=10
+         tickInterval="10"
+         min="0"
+             max="10"></mat-slider>
        </div>
 
   

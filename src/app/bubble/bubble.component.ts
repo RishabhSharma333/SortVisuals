@@ -36,6 +36,7 @@ drop(event: CdkDragDrop<number[]>) {
   }
   else if(event.currentIndex-event.previousIndex!=1){ this.message='Wrong move, We operate Bubble Sort with neighbour indices';}
   else this.message='Fine move';
+  console.log(this.bubbleArray);
 }
 
 
