@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -22,22 +23,22 @@ export class SidebarComponent implements OnInit {
       {number:11,alg:'Shell'}
     ]; 
 
-  constructor(private appService:AppService){}
+  constructor(private appService:AppService, private route:Router){}
   ngOnInit(){}
   onGenerate(){
     // console.log(this.selected_algo);
     switch (this.selected_algo){
-      case 1:{ this.appService.onBubble();break;}
-      case 3:{ this.appService.onBucketRadix();break;}
-      case 4:{ this.appService.onCounting();break;}
-      case 5:{ this.appService.onHeap();break;}
-      case 6:{ this.appService.onInsertion(); break;}
-      case 7:{ this.appService.onMerge();break;}
-      case 2:{ this.appService.onBucket();break;}
-      case 8:{ this.appService.onQuick();break;}
-      case 9:{ this.appService.onRadix(); break;}
-      case 10:{this.appService.onSelection();break;}
-      case 11:{this.appService.onShell();break;}
+      case 1:{this.route.navigate(['/bubble']);this.appService.onBubble();break;}
+      case 2:{this.route.navigate(['/bucket']);this.appService.onBucket();break;}
+      case 3:{this.route.navigate(['/bucket-radix']); this.appService.onBucketRadix();break;}
+      case 4:{this.route.navigate(['/counting']) ;this.appService.onCounting();break;}
+      case 5:{this.route.navigate(['/heap']); this.appService.onHeap();break;}
+      case 6:{this.route.navigate(['/insertion']); this.appService.onInsertion(); break;}
+      case 7:{ this.route.navigate(['/merge']);this.appService.onMerge();break;}
+      case 8:{this.route.navigate(['/quick']); this.appService.onQuick();break;}
+      case 9:{this.route.navigate(['/radix']); this.appService.onRadix(); break;}
+      case 10:{this.route.navigate(['/selection']);this.appService.onSelection();break;}
+      case 11:{this.route.navigate(['/shell']);this.appService.onShell();break;}
       }
     
     this.appService.sendArray.next(this.selected_algo);

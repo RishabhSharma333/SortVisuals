@@ -5,14 +5,14 @@ export class AppService{
      sendArray=new Subject<number>();
   onBubble(){
     var i:number;
-    for(i=0;i<23;i++){
+    for(i=0;i<12;i++){
     this.array.push(Math.floor(Math.random()*98)+1);
   }
   
   } 
   onBucket(){
     var i:number;
-    for(i=0;i<23;i++){
+    for(i=0;i<12;i++){
     this.array.push(Math.floor(Math.random()*8)+1);
   }
   
@@ -35,56 +35,56 @@ export class AppService{
   }
   onCounting(){
     var i:number;
-    for(i=0;i<23;i++){
+    for(i=0;i<12;i++){
     this.array.push(Math.floor(Math.random()*10)+1);
   }
   
   }
   onHeap(){
     var i:number;
-    for(i=0;i<40;i++){
+    for(i=0;i<12;i++){
     this.array.push(Math.floor(Math.random()*100)+1);
   }
  
   }
   onInsertion(){
     var i:number;
-    for(i=0;i<23;i++){
+    for(i=0;i<12;i++){
     this.array.push(Math.floor(Math.random()*300)+1);
   }
   
   }
   onMerge(){
     var i:number;
-    for(i=0;i<23;i++){
+    for(i=0;i<12;i++){
     this.array.push(Math.floor(Math.random()*50)+1);
   }
   
   }
   onQuick(){
     var i:number;
-    for(i=0;i<23;i++){
+    for(i=0;i<12;i++){
     this.array.push(Math.floor(Math.random()*50)+1);
   }
   
   }
   onRadix(){
     var i:number;
-    for(i=0;i<23;i++){
+    for(i=0;i<12;i++){
     this.array.push(Math.floor(Math.random()*1000)+1);
   }
   
   }
   onSelection(){
     var i:number;
-    for(i=0;i<23;i++){
+    for(i=0;i<12;i++){
     this.array.push(Math.floor(Math.random()*60)+1);
   }
   
   }
   onShell(){
     var i:number;
-    for(i=0;i<23;i++){
+    for(i=0;i<12;i++){
     this.array.push(Math.floor(Math.random()*60)+1);
   }
   

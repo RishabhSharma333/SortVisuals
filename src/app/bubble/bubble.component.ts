@@ -10,7 +10,7 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 export class BubbleComponent implements OnInit {
   constructor(private appService:AppService) { }
   bubbleArray:comp[]=[];
-  message:string='no Message';
+  message:string='';
   len:number;
   ngOnInit() {
     this.len=this.message.length;
@@ -31,9 +31,11 @@ drop(event: CdkDragDrop<number[]>) {
   moveItemInArray(this.bubbleArray, event.previousIndex, event.currentIndex);
   console.log(event.previousIndex);
   console.log(event.currentIndex);
-  if(this.bubbleArray[event.previousIndex].value>this.bubbleArray[event.currentIndex].value){this.message="Wrong Move";}
-  else{this.message='Fine Move';}
-  
+  if(this.bubbleArray[event.previousIndex].value>this.bubbleArray[event.currentIndex].value){
+    this.message="Wrong Move, Sort in non-decreasing order";
+  }
+  else if(event.currentIndex-event.previousIndex!=1){ this.message='Wrong move, We operate Bubble Sort with neighbour indices';}
+  else this.message='Fine move';
 }
 onStart(){
   if(this.bubbleArray.length<=0){
