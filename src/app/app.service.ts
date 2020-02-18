@@ -56,7 +56,7 @@ export class AppService{
   }
   onMerge(){
     var i:number;
-    for(i=0;i<12;i++){
+    for(i=0;i<16;i++){
     this.array.push(Math.floor(Math.random()*50)+1);
   }
   

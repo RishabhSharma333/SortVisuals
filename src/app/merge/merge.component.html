@@ -1,4 +1,20 @@
 <div class="container">
-    <mat-toolbar style="color: burlywood;"> Merge Sort
-        <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Sort Now</button>
+    <mat-toolbar style="color:burlywood;"><pre style="font-size: xx-large;">Merge Sort</pre>
+    <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Change Mode</button>
+    <p style="font-size: smaller;margin-left: 40px;" *ngIf="mode">Mode : Merging</p>
+    <p  style="font-size: smaller;margin-left: 40px;" *ngIf="!mode">Mode : Sorting</p>
     </mat-toolbar>
+    <p>Welcome to practicing  Merge sort  </p>
+    <div class="example-boundary" *ngIf="mergeArray.length>0">
+      <div cdkDropList 
+      cdkDropListOrientation="horizontal" 
+      class="number-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" 
+        *ngFor="let num of mergeArray;let i=index" 
+         cdkDragBoundary=".example-boundary" 
+         cdkDragLockAxis="x"
+         cdkDrag   style="font-size: larger;"> {{num}} <pre style="font-size: small; color:crimson;"> <br> {{i}}</pre></div>
+      </div>
+    </div>
+     <p style="color: red; font-size: larger;">{{message}}</p>
+    </div>

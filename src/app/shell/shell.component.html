@@ -1,4 +1,22 @@
 <div class="container">
-    <mat-toolbar style="color: darkkhaki;"> Shell Sort
-        <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Sort Now</button>
+    <mat-toolbar style="color:cornflowerblue;"> <pre style="font-size: xx-large;">Shell Sort</pre>
+      
+      <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Change Shell Size </button>
+       <pre> Shell Size: {{gap}}</pre>
     </mat-toolbar>
+    <p> Practicing Shell sort  </p>
+    <div class="example-boundary" *ngIf="shellArray.length>0">
+      <div cdkDropList 
+      cdkDropListOrientation="horizontal" 
+      class="number-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" 
+        *ngFor="let num of shellArray; let i=index;" 
+         cdkDragBoundary=".example-boundary" 
+         cdkDragLockAxis="x"
+         cdkDrag   style="font-size: larger;">{{num}} <pre style="font-size: small; color:crimson;"> <br> {{i}}</pre></div>
+      </div>
+    </div>
+     <p style="color: red; font-size: larger;">{{message}}</p>
+    </div>
+
+    
