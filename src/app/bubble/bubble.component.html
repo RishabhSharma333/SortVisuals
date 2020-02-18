@@ -9,8 +9,9 @@
     <div class="example-box" 
     *ngFor="let num of bubbleArray" 
      cdkDragBoundary=".example-boundary" 
-     cdkDrag>{{num}}</div>
+     cdkDragLockAxis="x"
+     cdkDrag >{{num.value}}</div>
   </div>
 </div>
- 
+ <p style="color: red; font-size: larger;">{{message}}</p>
 </div>

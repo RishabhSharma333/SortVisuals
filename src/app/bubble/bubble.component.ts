@@ -9,35 +9,43 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 })
 export class BubbleComponent implements OnInit {
   constructor(private appService:AppService) { }
-  bubbleArray:number[]=[];
-  
-
+  bubbleArray:comp[]=[];
+  message:string='no Message';
+  len:number;
   ngOnInit() {
-    this.appService.sendArray.subscribe(term=>{
-      if(term==1){
-        console.log(term);
-        this.bubbleArray=this.appService.arrayget();
+    this.len=this.message.length;
+    this.appService.sendArray.subscribe(elementsPresent=>{
+      if(elementsPresent==1){
+        console.log(elementsPresent);
+        let arr:number[]=this.appService.arrayget();
+        let i:number;
+        for(i=0;i<arr.length;i++){
+          this.bubbleArray.push(new comp(arr[i],i));
+          // if(i>0&&!this.changed){if(this.bubbleArray[i]>this.bubbleArray[i-1]){this.firstPlace=i-1;this.secondPlace=i;}}
+        }
       }
     });
-  
-
-}
+  }
 drop(event: CdkDragDrop<number[]>) {
+
   moveItemInArray(this.bubbleArray, event.previousIndex, event.currentIndex);
+  console.log(event.previousIndex);
+  console.log(event.currentIndex);
+  if(this.bubbleArray[event.previousIndex].value>this.bubbleArray[event.currentIndex].value){this.message="Wrong Move";}
+  else{this.message='Fine Move';}
+  
 }
 onStart(){
-  if(this.bubbleArray.length>0){
-     let i:number;
-     let min=100000;
-     let mini;
-     for (i=0;i<this.bubbleArray.length;i++){
-       if(min>this.bubbleArray[i]){
-         min=this.bubbleArray[i];
-        mini=i;}
-        }
-        
-    
+  if(this.bubbleArray.length<=0){
+     return;
   }
   
+      }
+
 }
+class comp{
+  constructor(public value:number,public index:number){}
 }
+
+  
+

@@ -3,10 +3,10 @@ import { Subject } from 'rxjs';
 export class AppService{
     array:number[]=[];
      sendArray=new Subject<number>();
-      onBubble(){
+  onBubble(){
     var i:number;
     for(i=0;i<23;i++){
-    this.array.push(Math.floor(Math.random()*300)+1);
+    this.array.push(Math.floor(Math.random()*98)+1);
   }
   
   } 
