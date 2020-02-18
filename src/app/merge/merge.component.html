@@ -4,7 +4,31 @@
     <p style="font-size: smaller;margin-left: 40px;" *ngIf="mode">Mode : Merging</p>
     <p  style="font-size: smaller;margin-left: 40px;" *ngIf="!mode">Mode : Sorting</p>
     </mat-toolbar>
-    <p>Welcome to practicing  Merge sort  </p>
+    <p> Practicing  Merge sort  </p>
+    <pre style="font-size: large; color: rgb(223, 153, 63);text-align: left;" *ngIf="!(mergeArray.length>0)" >
+       1:Merge Sort Follows Divide and Conquer Approach.
+       
+       2:Here I have Given two modes (There are technically no such modes in its implementation I have
+       added it to give a clear boundry between Merging and Sorting).
+       
+       3:In  this sorting ,we  use Only neighbouring elements and other stuff is done by Recursion itself.
+
+       4:In Merging,we merge Two sorted arrays (In most implementations,we use an external array to store that array )
+      
+       5:So just Follow the messages appearing below and Don't get Upset if U make a wrong move because A wrong move
+          makes it a Question of a Sorting anyway again.
+
+       6:Another cool way to do Merging process is by using Priority Queue(It still uses an external Space).
+
+       7:Some points about Merge Sort-
+           a:It is a comparision based sorting.
+           b:It is NOT in place Algorithm.
+           c:Divide and conquer based.
+
+
+    </pre>
+    <p  *ngIf="!(mergeArray.length>0)">Use the Sidebar to get elements in here</p>
+
     <div class="example-boundary" *ngIf="mergeArray.length>0">
       <div cdkDropList 
       cdkDropListOrientation="horizontal" 

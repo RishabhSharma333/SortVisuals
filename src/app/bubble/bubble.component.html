@@ -2,7 +2,26 @@
 <mat-toolbar style="color: dimgray;">  <pre style="font-size: xx-large;">Bubble Sort</pre>
   
 </mat-toolbar>
-<p>Welcome to practicing  Bubble sort  </p>
+<p>Practicing  Bubble sort  </p>
+<pre style="font-size: large; color: dimgray;text-align: left;" *ngIf="!(bubbleArray.length>0)" >
+       1:Bubble sort is a comparision based sorting Algorithm.
+  
+       2:It works by comparing adjacent elements only.
+       
+       3:It has many versions but none making it a commonly used algorithm.
+        
+       4:It is in Place (uses zero Extra space ).
+     
+       5:One correct wave of this sorting algorithm pushes its largest element to last.
+     
+       6:Then another wave pushes second largest to second last place.
+       
+       7:We have to make N-1 such waves.
+     
+       8:Look at the messages appearing below as you sort so as to get correct final Outcome.
+
+  </pre>
+<p  *ngIf="!(bubbleArray.length>0)">Use the Sidebar to get elements in here</p>
 <div class="example-boundary" *ngIf="bubbleArray.length>0">
   <div cdkDropList 
   cdkDropListOrientation="horizontal" 

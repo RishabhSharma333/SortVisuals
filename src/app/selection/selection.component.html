@@ -3,6 +3,23 @@
       
     </mat-toolbar>
     <p>Practicing  Selection sort  </p>
+    <pre style="color:cornflowerblue; font-size:large; text-align: left;" *ngIf="!(selectionArray.length>0)">
+      1:It is NOT a stable sort.
+
+      2:It is in place sorting algorithm.
+
+      3:It has its Array divided into two parts left and right(without any boundries).
+
+      4:Left portion of array  is kept sorted.
+
+      5:Then we search for the smallest element in right part array and place it in the end of
+        left part.
+
+      6:Now just give attention to the messsages appearing below as you proceed to move elements around.
+
+      7:Don't get bothered if you made a wrong move (you just made another sorting Question).
+    </pre>
+    <p *ngIf="!(selectionArray.length>0)">Use the sidebar to get elements here</p>
     <div class="example-boundary" *ngIf="selectionArray.length>0">
       <div cdkDropList 
       cdkDropListOrientation="horizontal" 

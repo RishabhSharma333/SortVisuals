@@ -1,8 +1,26 @@
 <div class="container">
     <mat-toolbar style="color: darkgreen"><pre style="font-size: xx-large;">Bucket Sort</pre>
-      <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Change Mode</button>
     </mat-toolbar>
-    <p>Welcome to practicing Bucket Sort. <span style="color:cadetblue;text-align:right;">Mode-{{mode}}</span></p>
+    <p> Practicing Bucket Sort. <span style="color:cadetblue;text-align:right;"> <pre *ngIf="(bucketArray.length>0)">Mode:{{mode}}</pre> </span></p>
+    <pre style="font-size: large; color: darkgreen;text-align: left;"  *ngIf="!(bucketArray.length>0)">
+        1:Bucket sort is NOT a comparision based sorting Algorithm.
+      
+        2:It works by using extra spaces known as Buckets to keep different elements in different 'buckets' 
+         based on their criteria.
+        
+        3:It has many versions and mostly implemented according to data it is going to receive.
+         
+        4:In some implementations we even keep the buckets sorted.
+       
+        5:Its Complexity may vary a lot according to what type of inputs it is receiving.
+       
+        6:This exercise will generate Algo specific elements and it has already made Buckets.
+
+        7:Firstly place the elements in the Buckets and then put it back to original 
+          array following the messages created as you place these elements.
+
+ </pre>
+<p  *ngIf="!(bucketArray.length>0)">Use the Sidebar to get elements in here</p>
     <div class="example-boundary" >
       <div cdkDropListGroup>
         <div class="example-container">

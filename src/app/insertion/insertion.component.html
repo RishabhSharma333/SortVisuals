@@ -2,6 +2,22 @@
     <mat-toolbar style="color:cornflowerblue;"> <pre style="font-size: xx-large;">Insertion Sort</pre>
     </mat-toolbar>
     <p> Practicing  Insertion sort  </p>
+    <pre style="color:cornflowerblue; font-size:large; text-align: left;" *ngIf="!(insertionArray.length>0)">
+      1:It is a stable sort.
+
+      2:It is in place sorting algorithm.
+
+      3:Generally faster than other quadratic complexity algorithm.
+
+      4:Sometimes used as a sub-process in merge sort when number of Elements are less.
+
+      5:It is dynamic(It can sort as it receives)
+
+      6:Now just give attention to the messsages appearing below as you proceed to move elements around.
+
+      7:Don't get bothered if you made a wrong move (you just made another sorting Question).
+    </pre>
+    <p *ngIf="!(insertionArray.length>0)">Use the sidebar to get elements here</p>
     <div class="example-boundary" *ngIf="insertionArray.length>0">
       <div cdkDropList 
       cdkDropListOrientation="horizontal" 
