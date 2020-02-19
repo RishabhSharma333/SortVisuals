@@ -8,7 +8,6 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { SidebarComponent } from './navigation/sidebar/sidebar.component';
 import { BubbleComponent } from './bubble/bubble.component';
 import { BucketComponent } from './bucket/bucket.component';
-import { BucketRadixComponent } from './bucket-radix/bucket-radix.component';
 import { CountingComponent } from './counting/counting.component';
 import { MergeComponent } from './merge/merge.component';
 import { QuickComponent } from './quick/quick.component';
@@ -28,7 +27,6 @@ import { AppService } from './app.service';
     SidebarComponent,
     BubbleComponent,
     BucketComponent,
-    BucketRadixComponent,
     CountingComponent,
     MergeComponent,
     QuickComponent,

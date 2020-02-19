@@ -95,7 +95,7 @@ export class BucketComponent implements OnInit {
     this.mode='non Bucketing';
   }
   isSorted(arr:number[]){
-    if(arr.length==2){
+    if(arr.length>=2){
     let i:number;
     for(i=1;i<arr.length;i++){
      if(arr[i-1]>arr[i]){return false;}

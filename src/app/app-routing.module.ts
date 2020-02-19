@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './navigation/welcome/welcome.component';
 import { BubbleComponent } from './bubble/bubble.component';
-import { BucketRadixComponent } from './bucket-radix/bucket-radix.component';
 import { CountingComponent } from './counting/counting.component';
 import { HeapComponent } from './heap/heap.component';
 import { InsertionComponent } from './insertion/insertion.component';
@@ -18,7 +17,6 @@ const routes: Routes = [
   {path: '',component:WelcomeComponent},
   {path:'bubble',component:BubbleComponent},
   {path:'bucket',component:BucketComponent},
-  {path:'bucket-radix',component:BucketRadixComponent},
   {path:'counting',component:CountingComponent},
   {path:'heap',component:HeapComponent},
   {path:'insertion',component:InsertionComponent},

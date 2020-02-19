@@ -57,7 +57,7 @@ helperPriority(arr:comp[]){
 }
 }//helper ends
 isSorted(arr:comp[]){
-  if(arr.length==2){
+  if(arr.length>=2){
   let i:number;
   for(i=1;i<arr.length;i++){
    if(arr[i-1].value>arr[i].value){return false;}
