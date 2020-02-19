@@ -17,6 +17,7 @@ export class BucketComponent implements OnInit {
   fours:number[]=[];
   fives:number[]=[];
   sixes:number[]=[];
+  present:boolean=true;
   message:string='';
   mode:string='Bucketing';
   
@@ -31,7 +32,7 @@ export class BucketComponent implements OnInit {
         this.fives.splice(0,this.fives.length);
         this.sixes.splice(0,this.sixes.length);
         this.message='';
-        console.log(elementsPresent);
+        this.present=false;
         let arr:number[]=this.appService.arrayget();
         let i:number;
         for(i=0;i<arr.length;i++){
@@ -56,7 +57,8 @@ export class BucketComponent implements OnInit {
         if(this.mode=='Bucketing'){
           if(event.previousContainer.id!='cdk-drop-list-0'){this.message='Move Elements from Parent list only';}
           else{let id=event.container.id;
-           
+           console.log(id);
+           console.log(event.previousContainer.id);
             if(id=='cdk-drop-list-1'){
               let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=1){this.message='Not Placed Correctly';break;}this.message='Rightly Placed';}
             }
@@ -82,16 +84,32 @@ export class BucketComponent implements OnInit {
             
           }
         }
-        else {let dat:string[]=event.container.data;
+        else {//non-bucketing
+          let dat:string[]=event.container.data;
           let numbers:number[]=[];
           let i:number;
+          let one=this.ones.length;
+          let two=this.twos.length;
+          let three=this.threes.length;
+          let four=this.fours.length;
+          let five=this.fives.length;
+          let six= this.sixes.length;
+
           for(i=0;i<dat.length;i++ ){
               numbers[i]=+dat[i];
           }
           if(this.isSorted(numbers)){
-            this.message='Righty Placed in Initial Array ';
+            let idd=event.previousContainer.id;
+            
+            if(idd=='cdk-drop-list-2'){if(one>0){this.message='empty previous buckets first';}}
+            else if(idd=='cdk-drop-list-3'){if(one>0&&two>0){this.message='empty previous buckets first';}}
+            else if(idd=='cdk-drop-list-4'){if(one>0&&two>0&&three>0){this.message='empty previous buckets first';}}
+            else if(idd=='cdk-drop-list-5'){if(one>0&&two>0&&three>0&&four>0){this.message='empty previous buckets first';}}
+            else if(idd=='cdk-drop-list-6'){if(one>0&&two>0&&three>0&&four>0&&five>0){this.message='empty previous buckets first';}}
+            else {this.message='Righty Placed in Initial Array ';}
+            
           }
-          else {this.message='Pick Elements from Correct Lists to place it into Initial array and  Hence Make Your array sorted ';}
+          else {this.message='Pick Elements from Correct Lists to place/Place at the last index to keep array sorted';}
            
         }
         

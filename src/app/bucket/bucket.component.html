@@ -2,7 +2,8 @@
     <mat-toolbar style="color: darkgreen"><pre style="font-size: xx-large;">Bucket Sort</pre>
     </mat-toolbar>
     <p style="font-size:medium;"> Practicing Bucket Sort. <span style="color:cadetblue;text-align:right;"> <pre *ngIf="(bucketArray.length>0)">Mode:{{mode}}</pre> </span></p>
-    <pre style="font-size: large; color: darkgreen;text-align: left;"  *ngIf="!(bucketArray.length>0)">
+    <p style="color:brown; font-size:large">{{message}}</p>
+    <pre style="font-size: large; color: darkgreen;text-align: left;"  *ngIf="present">
         1:Bucket sort is NOT a comparision based sorting Algorithm.
       
         2:It works by using extra spaces known as Buckets to keep different elements in different 'buckets' 
@@ -25,7 +26,7 @@
         9:For better performance it uses counting sort as its underlying sorting algorithm (It also makes it stable).
 
  </pre>
-<p  *ngIf="!(bucketArray.length>0)">Use the Sidebar to get elements in here</p>
+<p  *ngIf="present">Use the Sidebar to get elements in here</p>
     <div class="example-boundary" >
       <div cdkDropListGroup>
         <div class="example-container">
@@ -35,7 +36,7 @@
             [cdkDropListData]="bucketArray"
             class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let num of bucketArray" cdkDrag>{{num}}</div>
+            <div class="example-box" *ngFor="let num of bucketArray" cdkDrag style="color: rgb(38, 105, 107);font-size: medium;">{{num}}</div>
           </div>
         </div>
       
@@ -110,6 +111,6 @@
 
   
 
-    <p style="color:brown">{{message}}</p>
+   
      
     </div>

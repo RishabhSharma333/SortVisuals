@@ -31,14 +31,18 @@ export class BubbleComponent implements OnInit {
 drop(event: CdkDragDrop<number[]>) {
 
   moveItemInArray(this.bubbleArray, event.previousIndex, event.currentIndex);
-  console.log(event.previousIndex);
-  console.log(event.currentIndex);
+  
   if(this.bubbleArray[event.previousIndex].value>this.bubbleArray[event.currentIndex].value){
     this.message="Wrong Move, Sort in non-decreasing order";
   }
   else if(event.currentIndex-event.previousIndex!=1){ this.message='Wrong move, We operate Bubble Sort with neighbour indices';}
-  else this.message='Fine move';
-  console.log(this.bubbleArray);
+  else {let id:number;
+    let correct:boolean=true;
+    for(id=0;id<event.currentIndex;id++){if(this.bubbleArray[id]>this.bubbleArray[event.currentIndex]){ correct=false;break;}}
+    if(correct){this.message='Fine move';}
+    else {this.message='Treat previous elements first';}
+  }
+  
 }
 
 

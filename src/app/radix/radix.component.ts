@@ -28,7 +28,7 @@ export class RadixComponent implements OnInit {
        this.threes.splice(0,this.threes.length);
 
        this.present=false;
-        console.log(elementsPresent);
+        
         let arr:number[]=this.appService.arrayget();
         let i:number;
         for(i=0;i<arr.length;i++){
