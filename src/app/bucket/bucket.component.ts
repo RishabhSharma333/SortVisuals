@@ -21,7 +21,7 @@ export class BucketComponent implements OnInit {
   sixes:number[]=[];
   present:boolean=true;
   message:string='';
-  mode:string='Bucketing';
+  mode:boolean=false;
   
   ngOnInit() {
     this.appService.sendArray.subscribe(elementsPresent=>{
@@ -34,7 +34,7 @@ export class BucketComponent implements OnInit {
         this.fives.splice(0,this.fives.length);
         this.sixes.splice(0,this.sixes.length);
         this.message='';
-        this.mode='Bucketing';
+        this.mode=false;
         this.present=false;
         let arr:number[]=this.appService.arrayget();
         let i:number;
@@ -78,11 +78,9 @@ export class BucketComponent implements OnInit {
         event.currentIndex);
         
         
-        if(this.mode=='Bucketing'){
+        if(!this.mode){
           if(event.previousContainer.id!='cdk-drop-list-0'){this.message='Move Elements from Parent list only';}
           else{let id=event.container.id;
-           console.log(id);
-           console.log(event.previousContainer.id);
             if(id=='cdk-drop-list-1'){
               let i:number;for(i=0;i<event.container.data.length;i++){if(+event.container.data[i]!=1){this.message='Not Placed Correctly';break;}this.message='Rightly Placed';}
             }
@@ -109,19 +107,12 @@ export class BucketComponent implements OnInit {
           }
         }
         else {//non-bucketing
-          let dat:string[]=event.container.data;
-          let numbers:number[]=[];
-          let i:number;
           let one=this.ones.length;
           let two=this.twos.length;
           let three=this.threes.length;
           let four=this.fours.length;
-          let five=this.fives.length;
-
-          for(i=0;i<dat.length;i++ ){
-              numbers[i]=+dat[i];
-          }
-          if(this.isSorted(numbers)){
+          let five=this.fives.length;          
+          if(this.isSorted()){
             let idd=event.previousContainer.id;
             
             if(idd=='cdk-drop-list-2'){if(one>0){this.message='empty previous buckets first';}}
@@ -132,27 +123,30 @@ export class BucketComponent implements OnInit {
             else {this.message='Righty Placed in Initial Array ';}
             
           }
-          else {this.message='Pick Elements from Correct Lists to place/Place at the last index to keep array sorted';}
-           
+          else {
+            this.message='Pick Elements from Correct Lists to place/Place at the last index to keep array sorted';
+          }
         }
         
         
       }
       if(this.bucketArray.length==0){this.onStart();}
       if(this.isCompeltelySorted()){this.openDialog();}
+      
   }
   onStart(){
-    this.mode='non Bucketing';
+    this.mode=true;
   }
-  isSorted(arr:number[]){
-    if(arr.length>=2){
-    let i:number;
-    for(i=1;i<arr.length;i++){
-     if(arr[i-1]>arr[i]){return false;}
-    }
-  }
-  return true;
-  }
+  isSorted() 
+    { let n=this.bucketArray.length;
+      let i:number;
+        if (n == 0 || n == 1) 
+            return true; 
+           for ( i = 1; i < n; i++) 
+            if (this.bucketArray[i - 1] > this.bucketArray[i]) 
+                return false; 
+        return true; 
+    } 
 }
 
 

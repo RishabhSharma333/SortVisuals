@@ -63,12 +63,13 @@ export class CountingComponent implements OnInit {
      for(i=0;i<this.threes;i++){arr.push(3);}
      for(i=0;i<this.fours;i++){arr.push(4);}
      for(i=0;i<this.fives;i++){arr.push(5);}
-     this.countingArray=arr;this.message='you have your array sorted';}
+     this.countingArray=arr;this.message='you have your array sorted'; this.openDialog();}
      else {
        this.message='Make your count correct';
      }
-  }
-  this.openDialog();
+     
+   }
+  
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
@@ -82,13 +83,5 @@ export class CountingComponent implements OnInit {
     });
   }
   
-  isSorted(arr:number[]){
-    if(arr.length==2){
-    let i:number;
-    for(i=1;i<arr.length;i++){
-     if(arr[i-1]>arr[i]){return false;}
-    }
-  }
-  return true;
-  }
+ 
 }

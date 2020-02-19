@@ -43,7 +43,6 @@ export class BubbleComponent implements OnInit {
 drop(event: CdkDragDrop<number[]>) {
 
   moveItemInArray(this.bubbleArray, event.previousIndex, event.currentIndex);
-  
   if(this.bubbleArray[event.previousIndex]>this.bubbleArray[event.currentIndex]){
     this.message="Wrong Move, Sort in non-decreasing order";
   }

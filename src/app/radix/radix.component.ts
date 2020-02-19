@@ -144,7 +144,7 @@ export class RadixComponent implements OnInit {
     }return true;
   }
   isCompeltelySorted(){
-    if(this.threes.length==8){
+    if(this.threes.length==6){
       let i:number;
     for(i=1;i<this.threes.length;i++){
      if (this.threes[i-1]>this.threes[i]){return false;}
