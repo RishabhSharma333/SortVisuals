@@ -1,18 +1,18 @@
 <div class="container">
    <pre style="color:rgb(233, 35, 101);font-size:x-large">
  Generate Algo-
- Specific Numbers</pre>
-  <mat-form-field style="margin-left:30px;">
-     
-  <mat-label >Select Algo </mat-label>
+ Specific Numbers
+
+
+</pre>
+<mat-form-field style="margin-left:20px;">
+     <mat-label >Select Algo </mat-label>
   <mat-select [(value)]="selected_algo">
     <mat-option>None</mat-option>
     <mat-option *ngFor="let option of options" [value]="option.number" >{{option.alg}}
     </mat-option>
  </mat-select>
  </mat-form-field>
- <br>
- <br>
  <br>
  <br>
  <div>

@@ -25,7 +25,7 @@
               [cdkDropListData]="heapArray"
               class="example-list"
               (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let item of heapArray ;let i=index;" cdkDrag >{{item.value}}
+              <div class="example-box" *ngFor="let item of heapArray ;let i=index;" cdkDrag style="color:dimgray ;font-size: larger;">{{item.value}}
                 <pre style="color: chocolate; font-size: x-small;">{{i}}</pre>
               </div>
             </div>
@@ -39,7 +39,7 @@
               [cdkDropListData]="priorityArray"
               class="example-list"
               (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let item of priorityArray ;let i=index;" cdkDrag >{{item.value}}
+              <div class="example-box" *ngFor="let item of priorityArray ;let i=index;" cdkDrag style="color:dimgray ;font-size: larger;">{{item.value}}
                 <pre style="color: chocolate; font-size: x-small;">{{i}}</pre>
               </div>
             </div>

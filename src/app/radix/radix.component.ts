@@ -20,6 +20,7 @@ export class RadixComponent implements OnInit {
   
   ngOnInit() {
     this.appService.sendArray.subscribe(elementsPresent=>{
+      this.message='';
       if(elementsPresent==9){
        this.radixArray.splice(0,this.radixArray.length);
        this.ones.splice(0,this.ones.length);

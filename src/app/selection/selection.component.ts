@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { AppService } from '../app.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-selection',
@@ -17,6 +16,8 @@ export class SelectionComponent implements OnInit {
   ngOnInit() {
     this.appService.sendArray.subscribe(elementsPresent=>{
       if(elementsPresent==10){
+        this.message='';
+        this.selectionArray.splice(0,this.selectionArray.length);
         console.log(elementsPresent);
         let arr:number[]=this.appService.arrayget();
         let i:number;

@@ -17,6 +17,7 @@ export class BubbleComponent implements OnInit {
     this.appService.sendArray.subscribe(elementsPresent=>{
       if(elementsPresent==1){
         this.bubbleArray.splice(0,this.bubbleArray.length);
+        this.message='';
         console.log(elementsPresent);
         let arr:number[]=this.appService.arrayget();
         let i:number;

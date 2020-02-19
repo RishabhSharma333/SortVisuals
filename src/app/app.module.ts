@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule ,HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +19,8 @@ import { RadixComponent } from './radix/radix.component';
 import { WelcomeComponent } from './navigation/welcome/welcome.component';
 import { AppMaterial } from './app-material.module';
 import { AppService } from './app.service';
+import { GestureConfig } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,9 +43,10 @@ import { AppService } from './app.service';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AppMaterial
+    AppMaterial,
+    FormsModule
   ],
-  providers: [AppService],
+  providers: [AppService,{ provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

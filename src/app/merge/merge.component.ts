@@ -18,6 +18,7 @@ export class MergeComponent implements OnInit {
     
     this.appService.sendArray.subscribe(elementsPresent=>{
       if(elementsPresent==7){
+        this.message='';
         this.mergeArray.splice(0,this.mergeArray.length);
         console.log(elementsPresent);
         let arr:number[]=this.appService.arrayget();

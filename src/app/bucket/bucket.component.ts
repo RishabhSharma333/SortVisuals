@@ -30,6 +30,7 @@ export class BucketComponent implements OnInit {
         this.fours.splice(0,this.fours.length);
         this.fives.splice(0,this.fives.length);
         this.sixes.splice(0,this.sixes.length);
+        this.message='';
         console.log(elementsPresent);
         let arr:number[]=this.appService.arrayget();
         let i:number;
