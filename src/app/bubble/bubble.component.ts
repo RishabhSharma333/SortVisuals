@@ -11,7 +11,7 @@ import { DialogComponent } from '../navigation/dialog/dialog.component';
 })
 export class BubbleComponent implements OnInit {
   constructor(private appService:AppService,public dialog: MatDialog) { }
-  bubbleArray:comp[]=[];
+  bubbleArray:number[]=[];
   message:string='';
   
   ngOnInit() {
@@ -24,9 +24,8 @@ export class BubbleComponent implements OnInit {
         let arr:number[]=this.appService.arrayget();
         let i:number;
         for(i=0;i<arr.length;i++){
-          this.bubbleArray.push(new comp(arr[i],i));
-          // if(i>0&&!this.changed){if(this.bubbleArray[i]>this.bubbleArray[i-1]){this.firstPlace=i-1;this.secondPlace=i;}}
-        }
+          this.bubbleArray.push(arr[i]);
+          }
       }
     });
   }
@@ -44,8 +43,8 @@ export class BubbleComponent implements OnInit {
 drop(event: CdkDragDrop<number[]>) {
 
   moveItemInArray(this.bubbleArray, event.previousIndex, event.currentIndex);
-  this.openDialog();
-  if(this.bubbleArray[event.previousIndex].value>this.bubbleArray[event.currentIndex].value){
+  
+  if(this.bubbleArray[event.previousIndex]>this.bubbleArray[event.currentIndex]){
     this.message="Wrong Move, Sort in non-decreasing order";
   }
   else if(event.currentIndex-event.previousIndex!=1){ this.message='Wrong move, We operate Bubble Sort with neighbour indices';}
@@ -60,16 +59,14 @@ drop(event: CdkDragDrop<number[]>) {
 isCompeltelySorted(){
   let i:number;
   for(i=1;i<this.bubbleArray.length;i++){
-   if (this.bubbleArray[i-1].value>this.bubbleArray[i].value){return false;}
+   if (this.bubbleArray[i-1]>this.bubbleArray[i]){return false;}
   }
   return true;
 }
 
 
 }
-class comp{
-  constructor(public value:number,public index:number){}
-}
+
 
   
 
