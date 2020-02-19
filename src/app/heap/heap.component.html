@@ -1,8 +1,8 @@
 <div class="container">
   <mat-toolbar style="color: dimgray;"> <pre style="font-size: xx-large;"> Heap Sort  </pre>
         <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Change Mode</button><pre>  {{mode}} </pre></mat-toolbar>
-    <pre> Practicing Heap sort.  {{message}}  </pre>
-    <pre style="color:dimgrey;font-size: large;text-align: left;" *ngIf="heapArray.length==0">
+    <pre style="font-size: large;"> Practicing Heap sort.     {{message}}  </pre>
+    <pre style="color:dimgrey;font-size: large;text-align: left;" *ngIf="!present">
          1: HeapSort is NOT stable.
 
          2:HeapSort sorts in place.

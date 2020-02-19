@@ -15,6 +15,7 @@ export class HeapComponent implements OnInit {
   message:string='';
   priorityArray:comp[]=[];
   mode='Priority Queue-making';
+  present=false;
   
   ngOnInit() {
     this.appService.sendArray.subscribe(elementsPresent=>{
@@ -22,7 +23,7 @@ export class HeapComponent implements OnInit {
         this.heapArray.splice(0,this.heapArray.length);
         this.message='';
         this.priorityArray.splice(0,this.priorityArray.length);
-        console.log(elementsPresent);
+        this.present=true;
         let arr:number[]=this.appService.arrayget();
         let i:number;
         for(i=0;i<arr.length;i++){
@@ -41,12 +42,17 @@ export class HeapComponent implements OnInit {
                         event.currentIndex);
          this.helperPriority(this.priorityArray);
          if((this.mode=='Array-Making')&&(!this.isSorted(this.heapArray))){this.message='Keep the Array sorted, just Put the element at first Position';}
+         else if(event.previousContainer.id=='cdk-drop-list-1'&&event.previousIndex!=0){this.message='pick the elements from the top of priority queue only';}
          else this.message='Placed correctly';
       if(event.previousContainer.data.length==0){this.onStart();}
     }
   }
 
-onStart(){this.mode='Array-Making';}
+onStart(){
+  if(this.present&&this.priorityArray.length>0){
+  this.mode='Array-Making';
+  }
+}
 
 helperPriority(arr:comp[]){
   if(arr.length>0){

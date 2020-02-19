@@ -61,9 +61,9 @@ export class CountingComponent implements OnInit {
      for(i=0;i<this.threes;i++){arr.push(3);}
      for(i=0;i<this.fours;i++){arr.push(4);}
      for(i=0;i<this.fives;i++){arr.push(5);}
-     this.countingArray=arr;this.message='';}
+     this.countingArray=arr;this.message='you have your array sorted';}
      else {
-       this.message='Make Your count correct';
+       this.message='Make your count correct';
      }
   }
   }

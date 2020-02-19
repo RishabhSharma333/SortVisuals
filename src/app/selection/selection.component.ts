@@ -32,9 +32,9 @@ drop(event: CdkDragDrop<number[]>) {
   moveItemInArray(this.selectionArray, event.previousIndex, event.currentIndex);
   let pre=event.previousIndex;
   let curr=event.currentIndex;
-  if(curr>pre){this.message='Operate Elements from left To right';}
+  if(curr>pre){this.message='Operate Elements from right to left';}
   else if(this.shortest(this.selectionArray,curr)){this.message=' Placed Correctly';}
-  else {this.message='find smallest element from right Portion of array and place it in its correct position';}
+  else {this.message='find smallest element from unsorted portion of array and place it in its correct position';}
   
 }
 shortest(arr:number[],end:number){

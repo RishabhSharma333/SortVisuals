@@ -54,7 +54,7 @@ export class RadixComponent implements OnInit {
         if(idd=='cdk-drop-list-1'){
           if(dd!='cdk-drop-list-0'){this.message='Pick elemnts from the given array .Put the element back in the same place to Proceed Correctly';}
           else {
-             if(event.currentIndex!=this.ones.length-1){this.message='You did not placed the element at last Index ';} 
+             if(event.currentIndex!=this.ones.length-1){this.message='You did not place the element at last Index ';} 
              else  if(!this.isOneSorted()){this.message='You picked the wrong element to place';}
                else {this.message='Element Placed correctly';}
           }
@@ -62,7 +62,7 @@ export class RadixComponent implements OnInit {
         if(idd=='cdk-drop-list-2'){
           if(dd!='cdk-drop-list-1'){this.message='Pick elemnts from the array of Ones Place .Put the element back in the same place to Proceed Correctly';}
           else {
-             if(event.currentIndex!=this.twos.length-1){this.message='You did not placed the element at last Index ';} 
+             if(event.currentIndex!=this.twos.length-1){this.message='You did not place the element at last Index ';} 
             else if(!this.isTwoSorted()){this.message='You picked the wrong element to place';}
                else {this.message='Element Placed correctly';}
           }
@@ -70,7 +70,7 @@ export class RadixComponent implements OnInit {
         if(idd=='cdk-drop-list-3'){
           if(dd!='cdk-drop-list-2'){this.message='Pick elemnts from the array of Twos Place.Put the element back in the same place to Proceed Correctly';}
           else {
-            if(event.currentIndex!=this.threes.length-1){this.message='You did not placed the element at last Index ';} 
+            if(event.currentIndex!=this.threes.length-1){this.message='You did not place the element at last Index ';} 
            else if(!this.isThreeSorted()){this.message='You picked the wrong element to place';}
                else {this.message='Element Placed correctly';}
           }
