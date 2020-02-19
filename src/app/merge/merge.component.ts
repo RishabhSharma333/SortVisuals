@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { AppService } from '../app.service';
+import { DialogComponent } from '../navigation/dialog/dialog.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-merge',
@@ -9,7 +11,7 @@ import { AppService } from '../app.service';
 })
 export class MergeComponent implements OnInit {
 
-  constructor(private appService:AppService) { }
+  constructor(private appService:AppService,public dialog: MatDialog) { }
   mergeArray:number[]=[];
   message:string='';
   mode:boolean=false;
@@ -28,6 +30,24 @@ export class MergeComponent implements OnInit {
         }
       }
     });
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+    });
+  }
+  isCompeltelySorted(){
+    let i:number;
+    for(i=1;i<this.mergeArray.length;i++){
+     if (this.mergeArray[i-1]>this.mergeArray[i]){return false;}
+    }
+    return true;
   }
 drop(event: CdkDragDrop<number[]>) {
 
@@ -156,6 +176,7 @@ drop(event: CdkDragDrop<number[]>) {
    }
   
   }
+  if(this.isCompeltelySorted()){this.openDialog();}
  
 }
 onStart(){

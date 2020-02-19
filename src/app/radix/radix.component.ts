@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { MatDialog } from '@angular/material';
+import { DialogComponent } from '../navigation/dialog/dialog.component';
 
 @Component({
   selector: 'app-radix',
@@ -9,7 +11,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class RadixComponent implements OnInit {
 
-  constructor(private appService:AppService) { }
+  constructor(private appService:AppService,public dialog: MatDialog) { }
   radixArray:number[]=[];
   ones:number[]=[];
   twos:number[]=[];
@@ -36,6 +38,17 @@ export class RadixComponent implements OnInit {
          
         }
       }
+    });
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
     });
   }
   drop(event: CdkDragDrop<string[]>) {
@@ -77,6 +90,7 @@ export class RadixComponent implements OnInit {
         }
         }
         
+  if(this.isCompeltelySorted()){this.openDialog();}
        
     }
  
@@ -128,6 +142,17 @@ export class RadixComponent implements OnInit {
         if(b>a)return false;
       }
     }return true;
+  }
+  isCompeltelySorted(){
+    if(this.threes.length==8){
+      let i:number;
+    for(i=1;i<this.threes.length;i++){
+     if (this.threes[i-1]>this.threes[i]){return false;}
+    }
+    return true;
+  }
+  return false;
+    
   }
 
 

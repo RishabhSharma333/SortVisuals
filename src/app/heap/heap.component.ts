@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { AppService } from '../app.service';
+import { MatDialog } from '@angular/material';
+import { DialogComponent } from '../navigation/dialog/dialog.component';
+
 
 @Component({
   selector: 'app-heap',
@@ -10,7 +13,7 @@ import { AppService } from '../app.service';
 export class HeapComponent implements OnInit {
 
   
-  constructor(private appService:AppService) { }
+  constructor(private appService:AppService,public dialog: MatDialog) { }
   heapArray:comp[]=[];
   message:string='';
   priorityArray:comp[]=[];
@@ -32,6 +35,17 @@ export class HeapComponent implements OnInit {
       }
     });
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+    });
+  }
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -46,12 +60,24 @@ export class HeapComponent implements OnInit {
          else this.message='Placed correctly';
       if(event.previousContainer.data.length==0){this.onStart();}
     }
+    if(this.isCompeltelySorted()){this.openDialog();}
   }
 
 onStart(){
   if(this.present&&this.priorityArray.length>0){
   this.mode='Array-Making';
   }
+}
+isCompeltelySorted(){
+  if(this.heapArray.length==10){
+    let i:number;
+  for(i=1;i<this.heapArray.length;i++){
+   if (this.heapArray[i-1]>this.heapArray[i]){return false;}
+  }
+  return true;
+}
+return false;
+  
 }
 
 helperPriority(arr:comp[]){

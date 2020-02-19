@@ -21,6 +21,7 @@ import { AppMaterial } from './app-material.module';
 import { AppService } from './app.service';
 import { GestureConfig } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { DialogComponent } from './navigation/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     HeapComponent,
     ShellComponent,
     RadixComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [AppService,{ provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig }],
+  entryComponents: [DialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

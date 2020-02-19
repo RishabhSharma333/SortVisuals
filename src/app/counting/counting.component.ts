@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { DialogComponent } from '../navigation/dialog/dialog.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-counting',
@@ -9,7 +11,7 @@ import { CdkDragDrop } from '@angular/cdk/drag-drop';
 })
 export class CountingComponent implements OnInit {
 
-  constructor(private appService:AppService) { }
+  constructor(private appService:AppService,public dialog: MatDialog) { }
   countingArray:number[]=[];
   ones=0;
   twos:number=0;
@@ -66,7 +68,20 @@ export class CountingComponent implements OnInit {
        this.message='Make your count correct';
      }
   }
+  this.openDialog();
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+    });
+  }
+  
   isSorted(arr:number[]){
     if(arr.length==2){
     let i:number;

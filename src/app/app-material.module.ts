@@ -6,6 +6,7 @@ import {
     MatButtonModule,
     MatSelectModule,
     MatSliderModule,
+    MatDialogModule,
     } from "@angular/material";
 import{DragDropModule} from "@angular/cdk/drag-drop";
 @NgModule({
@@ -16,7 +17,8 @@ import{DragDropModule} from "@angular/cdk/drag-drop";
      MatButtonModule,
      MatSelectModule,
      DragDropModule,
-     MatSliderModule
+     MatSliderModule,
+     MatDialogModule
 
     ],
     exports:[
@@ -26,7 +28,8 @@ import{DragDropModule} from "@angular/cdk/drag-drop";
      MatButtonModule,
      MatSelectModule,
      DragDropModule,
-     MatSliderModule
+     MatSliderModule,
+     MatDialogModule
 
     ]
 })

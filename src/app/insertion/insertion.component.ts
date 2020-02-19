@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { AppService } from '../app.service';
+import { DialogComponent } from '../navigation/dialog/dialog.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-insertion',
@@ -10,7 +12,7 @@ import { AppService } from '../app.service';
 export class InsertionComponent implements OnInit {
 
  
-  constructor(private appService:AppService) { }
+  constructor(private appService:AppService,public dialog: MatDialog) { }
   insertionArray:number[]=[];
   message:string='';
   
@@ -29,6 +31,17 @@ export class InsertionComponent implements OnInit {
       }
     });
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+    });
+  }
 drop(event: CdkDragDrop<number[]>) {
 
   moveItemInArray(this.insertionArray, event.previousIndex, event.currentIndex);
@@ -38,6 +51,15 @@ drop(event: CdkDragDrop<number[]>) {
      this.message='Rightly Placed';}
      else {this.message='Not Placed Correctly/Picked Wrong Element ';}
 }
+if(this.isCompeltelySorted()){this.openDialog();}
+
+}
+isCompeltelySorted(){
+  let i:number;
+  for(i=1;i<this.insertionArray.length;i++){
+   if (this.insertionArray[i-1]>this.insertionArray[i]){return false;}
+  }
+  return true;
 }
 isSorted(arr:number[],end:number){
   if(end>1){

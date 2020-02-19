@@ -1,25 +1,33 @@
 <div class="container">
-   <pre style="color:rgb(233, 35, 101);font-size:x-large">
- Generate Algo-
- Specific Numbers
+   <pre style="color:rgb(233, 35, 101);font-size:x-large;margin-right: 10px;">
+ Generate Numbers
 
 
 </pre>
 <mat-form-field style="margin-left:20px;">
      <mat-label >Select Algo </mat-label>
   <mat-select [(value)]="selected_algo">
-    <mat-option>None</mat-option>
-    <mat-option *ngFor="let option of options" [value]="option.number" >{{option.alg}}
+    <mat-option >None</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option.number" style="color:crimson;">{{option.alg}}
     </mat-option>
  </mat-select>
  </mat-form-field>
  <br>
  <br>
  <div>
-
+     <br>
      <button mat-raised-button type="button" color="accent" (click)="onGenerate()" style="margin-left: 20px;"><pre>Generate</pre></button>
-     
+     <br>
+     <br>
+     <br>
 </div>
+<hr>
+<br>
+<pre style="font-size: large;">    Press the button to
+    navigate and then press
+    again to make numbers
+    appear.
+</pre>
  </div>
  
 

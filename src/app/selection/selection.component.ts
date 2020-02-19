@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { AppService } from '../app.service';
+import { DialogComponent } from '../navigation/dialog/dialog.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-selection',
@@ -9,7 +11,7 @@ import { AppService } from '../app.service';
 })
 export class SelectionComponent implements OnInit {
 
-  constructor(private appService:AppService) { }
+  constructor(private appService:AppService,public dialog: MatDialog) { }
   selectionArray:number[]=[];
   message:string='';
   
@@ -35,7 +37,8 @@ drop(event: CdkDragDrop<number[]>) {
   if(curr>pre){this.message='Operate Elements from right to left';}
   else if(this.shortest(this.selectionArray,curr)){this.message=' Placed Correctly';}
   else {this.message='find smallest element from unsorted portion of array and place it in its correct position';}
-  
+  if(this.isCompeltelySorted()){this.openDialog();}
+
 }
 shortest(arr:number[],end:number){
   if(arr.length>1){}
@@ -49,6 +52,24 @@ shortest(arr:number[],end:number){
   }
 }
   
+  return true;
+}
+openDialog(): void {
+  const dialogRef = this.dialog.open(DialogComponent, {
+    
+    
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+    
+  });
+}
+isCompeltelySorted(){
+  let i:number;
+  for(i=1;i<this.selectionArray.length;i++){
+   if (this.selectionArray[i-1]>this.selectionArray[i]){return false;}
+  }
   return true;
 }
 

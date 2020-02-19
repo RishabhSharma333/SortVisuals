@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { DialogComponent } from '../navigation/dialog/dialog.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-bucket',
@@ -9,7 +11,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class BucketComponent implements OnInit {
 
-  constructor(private appService:AppService) { }
+  constructor(private appService:AppService,public dialog: MatDialog) { }
   bucketArray:number[]=[];
   ones:number[]=[];
   twos:number[]=[];
@@ -32,6 +34,7 @@ export class BucketComponent implements OnInit {
         this.fives.splice(0,this.fives.length);
         this.sixes.splice(0,this.sixes.length);
         this.message='';
+        this.mode='Bucketing';
         this.present=false;
         let arr:number[]=this.appService.arrayget();
         let i:number;
@@ -41,6 +44,27 @@ export class BucketComponent implements OnInit {
         }
       }
     });
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+    });
+  }
+  isCompeltelySorted(){
+    if(this.bucketArray.length==10){
+    let i:number;
+    for(i=1;i<this.bucketArray.length;i++){
+     if (this.bucketArray[i-1]>this.bucketArray[i]){return false;}
+    }
+    return true;
+  }
+  return false;
   }
   drop(event: CdkDragDrop<string[]>) {
     
@@ -93,7 +117,6 @@ export class BucketComponent implements OnInit {
           let three=this.threes.length;
           let four=this.fours.length;
           let five=this.fives.length;
-          let six= this.sixes.length;
 
           for(i=0;i<dat.length;i++ ){
               numbers[i]=+dat[i];
@@ -116,6 +139,7 @@ export class BucketComponent implements OnInit {
         
       }
       if(this.bucketArray.length==0){this.onStart();}
+      if(this.isCompeltelySorted()){this.openDialog();}
   }
   onStart(){
     this.mode='non Bucketing';
