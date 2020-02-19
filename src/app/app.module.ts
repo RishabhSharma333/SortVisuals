@@ -10,7 +10,6 @@ import { BubbleComponent } from './bubble/bubble.component';
 import { BucketComponent } from './bucket/bucket.component';
 import { BucketRadixComponent } from './bucket-radix/bucket-radix.component';
 import { CountingComponent } from './counting/counting.component';
-import { FeatureComponent } from './navigation/feature/feature.component';
 import { MergeComponent } from './merge/merge.component';
 import { QuickComponent } from './quick/quick.component';
 import { InsertionComponent } from './insertion/insertion.component';
@@ -31,7 +30,6 @@ import { AppService } from './app.service';
     BucketComponent,
     BucketRadixComponent,
     CountingComponent,
-    FeatureComponent,
     MergeComponent,
     QuickComponent,
     InsertionComponent,

@@ -13,6 +13,7 @@ export class QuickComponent implements OnInit {
   quickArray:number[]=[];
   message:string='';
   mode:boolean=false;
+  pivot:number=11;
   
   ngOnInit() {
     
@@ -30,11 +31,25 @@ export class QuickComponent implements OnInit {
 drop(event: CdkDragDrop<number[]>) {
 
   moveItemInArray(this.quickArray, event.previousIndex, event.currentIndex);
-  
+    let pre=event.previousIndex;
+    let curr=event.currentIndex;
+    
+    if(this.isOkay(this.quickArray,curr,this.pivot)){
+      this.message='Placed Correctly';
+    }
+    else {this.message='Place the elements according to pivot';}
+    if(pre==this.pivot){this.pivot=curr-1;}
+    if(this.pivot==0){this.pivot=11;}
  
 }
 onStart(){
   this.mode=!this.mode;
+}
+isOkay(arr:number[],ind:number,pivotIndex:number){
+  if(ind>0){
+    let i:number;
+    for(i=0;i<=ind;i++)if(arr[i]>arr[pivotIndex]){return false;}
+  }return true;
 }
 isSorted(arr:number[],start:number,end:number){
   if(end<start){let swap=start;start=end;end=swap;}

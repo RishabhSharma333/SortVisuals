@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { AppService } from '../app.service';
 
 @Component({
@@ -28,15 +28,43 @@ export class HeapComponent implements OnInit {
       }
     });
   }
-drop(event: CdkDragDrop<number[]>) {
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data,
+                        event.container.data,
+                        event.previousIndex,
+                        event.currentIndex);
+         this.helperPriority(this.priorityArray);
+         if((this.mode=='Array-Making')&&(!this.isSorted(this.heapArray))){this.message='Keep the Array sorted, just Put the element at first Position';}
+      if(event.previousContainer.data.length==0){this.onStart();}
+    }
+  }
 
-  moveItemInArray(this.heapArray, event.previousIndex, event.currentIndex);
-  console.log(event.previousIndex);
-  console.log(event.currentIndex);
-
-  
-}
 onStart(){this.mode='Array-Making';}
+
+helperPriority(arr:comp[]){
+  if(arr.length>0){
+    let i:number;
+   let  maxi:number=0;
+  for(i=1;i<arr.length;i++){
+    if(arr[i].value>arr[maxi].value){maxi=i;}
+  }
+  let swap=arr[0];
+  arr[0]=arr[maxi];
+  arr[maxi]=swap;
+}
+}//helper ends
+isSorted(arr:comp[]){
+  if(arr.length==2){
+  let i:number;
+  for(i=1;i<arr.length;i++){
+   if(arr[i-1].value>arr[i].value){return false;}
+  }
+}
+return true;
+}
 }
 class comp{
   constructor(public value:number,public index:number){}

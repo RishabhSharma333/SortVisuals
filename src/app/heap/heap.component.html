@@ -1,32 +1,51 @@
 <div class="container">
-    <mat-toolbar style="color: dimgray;"> <pre style="font-size: xx-large;">Heap Sort</pre>
-        <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Change Mode</button></mat-toolbar>
-    <p> Practicing Heap sort.  Mode:{{mode}} </p>
-    <div class="example-boundary" *ngIf="heapArray.length>0">
+  <mat-toolbar style="color: dimgray;"> <pre style="font-size: xx-large;"> Heap Sort  </pre>
+        <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Change Mode</button><pre>   Mode:{{mode}}</pre></mat-toolbar>
+    <p> Practicing Heap sort.  </p>
+    <pre style="color:dimgrey;font-size: large;text-align: left;" *ngIf="heapArray.length==0">
+         1: HeapSort is NOT stable.
+
+         2:HeapSort sorts in place.
+
+         3:Uses an Priority Queue or a Heap(min heap) ,here Priority Queue is used.
+
+         4:Priority Queue give the minimum element in logarithm time which helps Heap Sort ,sort faster.
+
+         5:To sort firstly place all elements in priority Queue and then pick the topMost Element of 
+           it to place it back to original array
+    </pre>
+    <p style="text-align: left;" *ngIf="heapArray.length==0"> </p >
+      <div class="example-boundary" >
         <div cdkDropListGroup>
-            <div class="example-container">
-              <p>Given array</p>
-            <div
-                cdkDropList
-                [cdkDropListData]="given"
-                class="example-list"
-                (cdkDropListDropped)="drop($event)">
-                <div class="example-box" *ngFor="let item of heapArray"  cdkDragBoundary=".example-boundary"cdkDrag 
-                style="font-size: larger;">{{item.value}}
-                <span style="color:darksalmon;font-size: smaller;" cdkDragBoundary=".example-boundary">{{i}}</span></div>
-              </div>
-            </div>
           <div class="example-container">
-              <p>Use this as Priority Array</p>
-                 <div
-                cdkDropList
-                [cdkDropListData]="priority"
-                class="example-list"
-                (cdkDropListDropped)="drop($event)">
-                <div class="example-box" *ngFor="let item of priorityArray" cdkDragBoundary=".example-boundary" cdkDrag >{{item.value}}</div>
+            <p>Given Array</p>
+        
+            <div
+              cdkDropList
+              [cdkDropListData]="heapArray"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)">
+              <div class="example-box" *ngFor="let item of heapArray ;let i=index;" cdkDrag >{{item.value}}
+                <pre style="color: chocolate; font-size: x-small;">{{i}}</pre>
               </div>
             </div>
           </div>
-    </div>
-    <p style="color: red; font-size: larger;">{{message}}</p>
-    </div>
+        
+          <div class="example-container">
+            <p>Priority Queue</p>
+        
+            <div
+              cdkDropList
+              [cdkDropListData]="priorityArray"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)">
+              <div class="example-box" *ngFor="let item of priorityArray ;let i=index;" cdkDrag >{{item.value}}
+                <pre style="color: chocolate; font-size: x-small;">{{i}}</pre>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+  <p style="color: red; font-size: larger;">{{message}}</p>
+</div>

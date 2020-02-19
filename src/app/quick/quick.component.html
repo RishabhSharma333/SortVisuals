@@ -1,7 +1,7 @@
 <div class="container">
     <mat-toolbar style="color:lightseagreen;"><pre style="font-size: xx-large;">Quick Sort</pre>
     </mat-toolbar>
-    <p>Practicing  Quick sort  </p>
+    <p>Practicing  Quick sort  </p> <pre style="font-size: large;" *ngIf="quickArray.length>0">Pivot:{{quickArray[pivot]}}</pre>
     <div class="example-boundary" *ngIf="quickArray.length>0">
       <div cdkDropList 
       cdkDropListOrientation="horizontal" 
