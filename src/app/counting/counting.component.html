@@ -3,7 +3,7 @@
   <button mat-raised-button (click)="onStart()" style="margin-left:30px;"> Make My Array</button>
     </mat-toolbar>
     <p>Practicing Counting Sort. </p>
-    <pre *ngIf="mode">
+    <pre *ngIf="mode" style="font-size: large;">
       1:Its correct Implementation is stable always.
       
       2:It is used as a subsequence for Radix and Bucket Sort.
@@ -13,6 +13,14 @@
       4:It uses an extra array to keep record of how many times a key is occuring 
 
       5:Its principle is similar to as of PiegonHole Sorting.
+
+      6:In this exercise Stability of counting sort is not
+        taken into account.
+
+      7:To follow this exercise just count number of times 
+        a value is present and use slider to indicate this
+        
+      8:On completion click on Make My Array
     </pre>
     <div class="row" *ngIf="!mode">
       <div class="column1">
@@ -35,6 +43,7 @@
         <pre>
           <br>
           <br>
+          <p style="color:brown">{{message}}</p>
           <br>
         <mat-slider min="0" max="9" step="1" [(ngModel)]="ones"></mat-slider>
           Ones:{{ones}}
@@ -51,10 +60,11 @@
         <mat-slider min="0" max="9" step="1" [(ngModel)]="fives"></mat-slider>
         Fives:{{fives}}
          </pre>
+        
        
       </div>
     </div>
      
         
-        <p style="color:brown">{{message}}</p>
+        
       </div>
