@@ -55,7 +55,7 @@ export class AppService{
   }
   onRadix(){
     var i:number;
-    for(i=0;i<12;i++){
+    for(i=0;i<8;i++){
     this.array.push(Math.floor(Math.random()*500)+111);
   }
   

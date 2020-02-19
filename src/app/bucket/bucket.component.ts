@@ -103,8 +103,6 @@ export class BucketComponent implements OnInit {
   }
   return true;
   }
-
-
 }
 
 

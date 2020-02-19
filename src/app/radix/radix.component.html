@@ -1,24 +1,28 @@
 <div class="container">
   <mat-toolbar style="color: palevioletred"><pre style="font-size: xx-large;">Radix Sort</pre>
   </mat-toolbar>
-  <p> Practicing Radix Sort. <span style="color:cadetblue;text-align:right;"> <pre *ngIf="radixArray.length>0">Mode:{{mode}}</pre> </span></p>
-  <pre style="font-size: large; color: palevioletred;text-align: left;"  *ngIf="!(radixArray.length>0)">
+  <p style="font-size: medium;"> Practicing Radix Sort.</p>
+  <p style="color:brown">{{message}}</p>
+  <pre style="font-size: large; color: palevioletred;text-align: left;"  *ngIf="present">
       1:Radix sort is NOT a comparision based sorting Algorithm,but it is stable.
     
       2:It works by sorting the elements based on its digits ,starting from lesser 
         significant digits to more significant digits.
       
       3:In mostly implemented versions it used counting sort as subroutine.
-       
-      4:Here we are using three digit numbers to demonstrate it
-     
-      5:Its Complexity may vary a lot according to what type of inputs it is receiving.
-     
 
-      6:Firstly place the elements in first column and to the second and then to the third ,
-      you will get a sorted array.
+      4:It technically sorts based on values of digits and not on number as a whole.
+       
+      5:Here we are using three digit numbers to demonstrate it
+     
+      6:Its Complexity may vary a lot according to what type of inputs it is receiving.
+     
+      7:Firstly place all the elements in first column's end(according to their values of one's digit) and then
+        to the second column's end (according to their values of one's digit) and then to the third column's end (according 
+        to their values of one's digit),
+        you will get a sorted array.
       </pre>
-<p  *ngIf="!(radixArray.length>0)">Use the Sidebar to get elements in here</p>
+<p  *ngIf="present">Use the Sidebar to get elements in here</p>
   <div class="example-boundary" >
     <div cdkDropListGroup>
       <div class="example-container">
@@ -28,47 +32,47 @@
           [cdkDropListData]="radixArray"
           class="example-list"
           (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let num of radixArray" cdkDrag>{{num}}</div>
+          <div class="example-box" *ngFor="let num of radixArray;let i=index;" cdkDrag style="font-size: larger;">{{num}} <br> <pre style="font-size: xx-small;color:brown;">{{num%10}}</pre>
+          </div>
         </div>
       </div>
     
       <div class="example-container">
-        <p>One's Place</p>
-    
-        <div
+        <p>One's Place sorted</p>
+       <div
           cdkDropList
           [cdkDropListData]="ones"
           class="example-list"
           (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let num of ones" cdkDrag>{{num}}</div>
+          <div class="example-box" *ngFor="let num of ones" cdkDrag style="font-size: larger;">{{num}} <br> <pre style="color: brown;font-size: xx-small;">{{getSecond(num)}}</pre></div>
         </div>
       </div>
       <div class="example-container">
-        <p>Two's Place</p>
+        <p>Two's Place sorted</p>
     
         <div
           cdkDropList
           [cdkDropListData]="twos"
           class="example-list"
           (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let num of twos" cdkDrag>{{num}}</div>
+          <div class="example-box" *ngFor="let num of twos" cdkDrag style="font-size: larger;">{{num}}  <br><pre style="color: brown;font-size: xx-small;">{{getThird(num)}}</pre></div>
         </div>
       </div>
       <div class="example-container">
-        <p>Three's Place</p>
+        <p>Three's Place sorted</p>
     
         <div
           cdkDropList
           [cdkDropListData]="threes"
           class="example-list"
           (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let num of threes" cdkDrag>{{num}}</div>
+          <div class="example-box" *ngFor="let num of threes" cdkDrag style="font-size: larger;">{{num}} </div>
         </div>
       </div>
    </div>
 
 
 
-  <p style="color:brown">{{message}}</p>
+  
    
   </div>
