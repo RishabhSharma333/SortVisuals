@@ -1,9 +1,10 @@
 # SortVisuals
-this project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
-This project is all about practicing your concepts with sorting.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+
+This project is all about practicing your concepts of sorting.     
 It allows you to drag and drop numbers from list(s) so as to get help in visualizations and practicing at the
-same time.
-I have covered eigth sorting algorithms 
+same time.   
+It has eight sorting algorithms covered    
 1:
 Bubble Sort
 
