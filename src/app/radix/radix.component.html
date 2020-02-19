@@ -1,18 +1,74 @@
 <div class="container">
-    <mat-toolbar style="color:palevioletred;">  <pre style="font-size: xx-large;">Radix Sort</pre>
+  <mat-toolbar style="color: palevioletred"><pre style="font-size: xx-large;">Radix Sort</pre>
+  </mat-toolbar>
+  <p> Practicing Radix Sort. <span style="color:cadetblue;text-align:right;"> <pre *ngIf="(radixArray.length>0)">Mode:{{mode}}</pre> </span></p>
+  <pre style="font-size: large; color: palevioletred;text-align: left;"  *ngIf="!(radixArray.length>0)">
+      1:Radix sort is NOT a comparision based sorting Algorithm,but it is stable.
+    
+      2:It works by sorting the elements based on its digits ,starting from lesser 
+        significant digits to more significant digits.
       
-    </mat-toolbar>
-    <p>Practicing  Radix sort  </p>
-    <div class="example-boundary" *ngIf="radixArray.length>0">
-      <div cdkDropList 
-      cdkDropListOrientation="horizontal" 
-      class="number-list" (cdkDropListDropped)="drop($event)">
-        <div class="example-box" 
-        *ngFor="let num of radixArray" 
-         cdkDragBoundary=".example-boundary" 
-         cdkDragLockAxis="x"
-         cdkDrag   style="font-size: larger;">{{num}} <pre style="font-size: small; color:crimson;"> <br> {{i}}</pre></div>
+      3:In mostly implemented versions it used counting sort as subroutine.
+       
+      4:Here we are using three digit numbers to demonstrate it
+     
+      5:Its Complexity may vary a lot according to what type of inputs it is receiving.
+     
+
+      6:Firstly place the elements in first column and to the second and then to the third ,
+      you will get a sorted array.
+      </pre>
+<p  *ngIf="!(radixArray.length>0)">Use the Sidebar to get elements in here</p>
+  <div class="example-boundary" >
+    <div cdkDropListGroup>
+      <div class="example-container">
+        <p>Given Array</p>
+        <div
+          cdkDropList
+          [cdkDropListData]="radixArray"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let num of radixArray" cdkDrag>{{num}}</div>
+        </div>
       </div>
-    </div>
-     <p style="color: red; font-size: larger;">{{message}}</p>
-    </div>
+    
+      <div class="example-container">
+        <p>One's Place</p>
+    
+        <div
+          cdkDropList
+          [cdkDropListData]="ones"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let num of ones" cdkDrag>{{num}}</div>
+        </div>
+      </div>
+      <div class="example-container">
+        <p>Two's Place</p>
+    
+        <div
+          cdkDropList
+          [cdkDropListData]="twos"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let num of twos" cdkDrag>{{num}}</div>
+        </div>
+      </div>
+      <div class="example-container">
+        <p>Three's Place</p>
+    
+        <div
+          cdkDropList
+          [cdkDropListData]="threes"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let num of threes" cdkDrag>{{num}}</div>
+        </div>
+      </div>
+   </div>
+
+
+
+  <p style="color:brown">{{message}}</p>
+   
+  </div>

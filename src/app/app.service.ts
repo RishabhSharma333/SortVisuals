@@ -17,22 +17,7 @@ export class AppService{
   }
   
   }
-  onBucketRadix(){
-    var i:number;
-    for(i=0;i<8;i++){
-    this.array.push(Math.floor(Math.random()*10)+1);
-  }
-  for(i=0;i<6;i++){
-    this.array.push(Math.floor(Math.random()*100)+1);
-  }
-  for(i=0;i<6;i++){
-    this.array.push(Math.floor(Math.random()*1000)+1);
-  }
-  for(i=0;i<3;i++){
-    this.array.push(Math.floor(Math.random()*10000)+1);
-  }
-  
-  }
+ 
   onCounting(){
     var i:number;
     for(i=0;i<9;i++){
@@ -71,7 +56,7 @@ export class AppService{
   onRadix(){
     var i:number;
     for(i=0;i<12;i++){
-    this.array.push(Math.floor(Math.random()*1000)+1);
+    this.array.push(Math.floor(Math.random()*500)+111);
   }
   
   }

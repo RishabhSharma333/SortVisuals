@@ -30,7 +30,6 @@ export class SidebarComponent implements OnInit {
     switch (this.selected_algo){
       case 1:{this.route.navigate(['/bubble']);this.appService.onBubble();break;}
       case 2:{this.route.navigate(['/bucket']);this.appService.onBucket();break;}
-      case 3:{this.route.navigate(['/bucket-radix']); this.appService.onBucketRadix();break;}
       case 4:{this.route.navigate(['/counting']) ;this.appService.onCounting();break;}
       case 5:{this.route.navigate(['/heap']); this.appService.onHeap();break;}
       case 6:{this.route.navigate(['/insertion']); this.appService.onInsertion(); break;}

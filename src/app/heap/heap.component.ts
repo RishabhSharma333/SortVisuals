@@ -38,6 +38,7 @@ export class HeapComponent implements OnInit {
                         event.currentIndex);
          this.helperPriority(this.priorityArray);
          if((this.mode=='Array-Making')&&(!this.isSorted(this.heapArray))){this.message='Keep the Array sorted, just Put the element at first Position';}
+         else this.message='Placed correctly';
       if(event.previousContainer.data.length==0){this.onStart();}
     }
   }
