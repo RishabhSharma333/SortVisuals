@@ -23,6 +23,13 @@ export class BucketComponent implements OnInit {
   ngOnInit() {
     this.appService.sendArray.subscribe(elementsPresent=>{
       if(elementsPresent==2){
+        this.bucketArray.splice(0,this.bucketArray.length);
+        this.ones.splice(0,this.ones.length);
+        this.twos.splice(0,this.twos.length);
+        this.threes.splice(0,this.threes.length);
+        this.fours.splice(0,this.fours.length);
+        this.fives.splice(0,this.fives.length);
+        this.sixes.splice(0,this.sixes.length);
         console.log(elementsPresent);
         let arr:number[]=this.appService.arrayget();
         let i:number;

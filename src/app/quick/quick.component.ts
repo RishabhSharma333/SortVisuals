@@ -19,6 +19,7 @@ export class QuickComponent implements OnInit {
     
     this.appService.sendArray.subscribe(elementsPresent=>{
       if(elementsPresent==8){
+        this.quickArray.splice(0,this.quickArray.length);
         console.log(elementsPresent);
         let arr:number[]=this.appService.arrayget();
         let i:number;

@@ -18,6 +18,7 @@ export class ShellComponent implements OnInit {
     
     this.appService.sendArray.subscribe(elementsPresent=>{
       if(elementsPresent==11){
+        this.shellArray.splice(0,this.shellArray.length);
         console.log(elementsPresent);
         let arr:number[]=this.appService.arrayget();
         let i:number;

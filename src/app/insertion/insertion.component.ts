@@ -17,6 +17,7 @@ export class InsertionComponent implements OnInit {
   ngOnInit() {
     
     this.appService.sendArray.subscribe(elementsPresent=>{
+      this.insertionArray.splice(0,this.insertionArray.length);
       if(elementsPresent==6){
         console.log(elementsPresent);
         let arr:number[]=this.appService.arrayget();

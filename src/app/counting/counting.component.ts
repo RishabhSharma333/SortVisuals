@@ -22,6 +22,7 @@ export class CountingComponent implements OnInit {
   ngOnInit() {
     this.appService.sendArray.subscribe(elementsPresent=>{
       if(elementsPresent==4){
+        this.countingArray.splice(0,this.countingArray.length);
         console.log(elementsPresent);
         let arr:number[]=this.appService.arrayget();
         let i:number;

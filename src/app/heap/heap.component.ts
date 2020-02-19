@@ -19,6 +19,8 @@ export class HeapComponent implements OnInit {
   ngOnInit() {
     this.appService.sendArray.subscribe(elementsPresent=>{
       if(elementsPresent==5){
+        this.heapArray.splice(0,this.heapArray.length);
+        this.priorityArray.splice(0,this.priorityArray.length);
         console.log(elementsPresent);
         let arr:number[]=this.appService.arrayget();
         let i:number;
