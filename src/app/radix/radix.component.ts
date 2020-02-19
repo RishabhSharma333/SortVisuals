@@ -10,7 +10,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 export class RadixComponent implements OnInit {
 
   constructor(private appService:AppService) { }
-  bucketArray:number[]=[];
+  radixArray:number[]=[];
   ones:number[]=[];
   twos:number[]=[];
   threes:number[]=[];
@@ -23,7 +23,7 @@ export class RadixComponent implements OnInit {
         let arr:number[]=this.appService.arrayget();
         let i:number;
         for(i=0;i<arr.length;i++){
-          this.bucketArray.push(arr[i]);
+          this.radixArray.push(arr[i]);
          
         }
       }
@@ -44,8 +44,7 @@ export class RadixComponent implements OnInit {
         
       
       }
-      
-  }
+    }
  
   isSorted(arr:number[]){
     if(arr.length>=2){
