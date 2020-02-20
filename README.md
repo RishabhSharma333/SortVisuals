@@ -97,8 +97,16 @@ This side bar produces different range of random numbers so as to create a list 
   
 
 
-## Status  
-1:Quick sort and Shell sort still to add.
+## Status and future additions
+1:Adding Quick and Shell sort exercises.  
+2:May be placing an element back to its original position if placed at wrong place.  
+
+## Technology used
+1:Angular 8  
+2:Angular Material (CDK,Hammer js,CDK Drag and Drop)  
+3:Html  
+4:Css  
+5:Algorithms  
 
 
 ## Development server
