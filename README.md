@@ -12,7 +12,7 @@ Even if you place an element at wrong place then also it continues to work by ta
 
 To fill list with some elements ,use sidebar.
 
-This side bar produces differnt range of random numbers so as to create a list which is worked upon by the same algorithm which is producing it.  
+This side bar produces different range of random numbers so as to create a list which is worked upon by the same algorithm which is producing it.  
 
 
 ## Here is the preview of its homepage.
