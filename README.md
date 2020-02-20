@@ -10,7 +10,7 @@ same time.
 
 It works by giving proper feedback messages as user proceeds to sort(places element from place to another).  
 
-Even if you place an element at wrong place then also it continues to work by taking newly(wrong) made list as its initial input.  
+Even if you place an element at wrong place , it continues to work by taking newly(wrong) made list as its initial input.  
 
 To fill list with some elements ,use sidebar.
 
