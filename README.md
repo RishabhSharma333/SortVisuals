@@ -1,7 +1,9 @@
-# SortVisuals
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-This project is all about practicing your concepts of sorting.     
+# Sort Visuals  
+
+#### This project is all about practicing and hence visualizing various sorting algorithms.It is a single page Web App
+     
 
 It allows you to drag and drop numbers from list(s) so as to get help in visualizations and practicing at the
 same time.  
