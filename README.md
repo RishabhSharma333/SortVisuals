@@ -2,8 +2,22 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
 This project is all about practicing your concepts of sorting.     
+
 It allows you to drag and drop numbers from list(s) so as to get help in visualizations and practicing at the
 same time.  
+
+It works by giving proper feedback messages as user proceeds to sort(places element from place to another).  
+
+Even if you place an element at wrong place then also it continues to work by taking newly(wrong) made list as its initial input.  
+
+To fill list with some elements ,use sidebar.
+
+This side bar produces differnt range of random numbers so as to create a list which is worked upon by the same algorithm which is producing it.  
+
+
+### Here is the preview of its homepage.
+
+
  ![alt-text](https://github.com/RishabhSharma333/SortVisuals/blob/master/sortgifs/welcome.gif)
 
  ### It has eight sorting algorithms covered   
