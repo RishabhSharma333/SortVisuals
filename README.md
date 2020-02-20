@@ -4,8 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 This project is all about practicing your concepts of sorting.     
 It allows you to drag and drop numbers from list(s) so as to get help in visualizations and practicing at the
 same time.  
- Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+ ![alt-text](https://github.com/RishabhSharma333/SortVisuals/blob/master/sortgifs/welcome.gif)
 
  ### It has eight sorting algorithms covered   
      
