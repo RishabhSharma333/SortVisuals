@@ -22,64 +22,69 @@ This side bar produces differnt range of random numbers so as to create a list w
 
  ### It has eight sorting algorithms covered   
      
- #### 1:Bubble Sort  
+ #### 1:Bubble Sort  <section id='description'>
  To use Bubble sort ,firstly create some elements using generate button of sidebar.  
  
  Then follow the procedure of placing the elements ,the same way this technique would sort elements.  
  
  ![alt-text](https://github.com/RishabhSharma333/SortVisuals/blob/master/sortgifs/bubble.gif)
- 
- #### 2:Bucket Sort  
+ </section>
+ #### 2:Bucket Sort  <section id='description'>
  To use Bucket sort ,firstly create some elements using generate button of sidebar.  
  
  
  Then follow the procedure of placing the elements ,the same way this technique would sort elements.  
  
  ![alt-text](https://github.com/RishabhSharma333/SortVisuals/blob/master/sortgifs/bucket.gif)  
- 
- #### 3:Counting Sort  
+ </section>
+ #### 3:Counting Sort  <section id='description'>
  To use Counting sort ,firstly create some elements using generate button of sidebar.  
  
  
  Then follow the procedure of placing the elements ,the same way this technique would sort elements.  
  
  ![alt-text](https://github.com/RishabhSharma333/SortVisuals/blob/master/sortgifs/counting.gif)  
- 
- #### 4: Heap Sort
+ </section>
+ #### 4: Heap Sort <section id='description'>
  To use Heap sort ,firstly create some elements using generate button of sidebar.  
  
  Then follow the procedure of placing the elements ,the same way this technique would sort elements.  
  
  ![alt-text](https://github.com/RishabhSharma333/SortVisuals/blob/master/sortgifs/heap.gif)  
- 
- #### 5:Insertion Sort  
+ </section>
+ #### 5:Insertion Sort  <section id='description'>
  To use Insertion sort ,firstly create some elements using generate button of sidebar.  
  
  Then follow the procedure of placing the elements ,the same way this technique would sort elements.  
  
  ![alt-text](https://github.com/RishabhSharma333/SortVisuals/blob/master/sortgifs/insertion.gif)  
- 
- #### 6:Merge Sort  
+ </section>
+ #### 6:Merge Sort 
+ <section id='description'>
  To use Merge sort ,firstly create some elements using generate button of sidebar.  
  
  Then follow the procedure of placing the elements ,the same way this technique would sort elements.  
   
  ![alt-text](https://github.com/RishabhSharma333/SortVisuals/blob/master/sortgifs/merge.gif)  
- 
+ </section>
  #### 7:Radix Sort  
+ 
+ <section id='radix'>
  To use Radix sort ,firstly create some elements using generate button of sidebar.  
  
  Then follow the procedure of placing the elements ,the same way this technique would sort elements.  
  
  ![alt-text](https://github.com/RishabhSharma333/SortVisuals/blob/master/sortgifs/radix.gif)  
- 
+ </section>
  #### 8:Selection Sort  
+ 
+<section id='selection'>
  To use Selection sort ,firstly create some elements using generate button of sidebar.  
  
  Then follow the procedure of placing the elements ,the same way this technique would sort elements.  
  
  ![alt-text](https://github.com/RishabhSharma333/SortVisuals/blob/master/sortgifs/selection.gif)
-  
+  </section>
 
 
 
