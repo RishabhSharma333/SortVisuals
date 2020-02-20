@@ -100,6 +100,7 @@ This side bar produces different range of random numbers so as to create a list 
 ## Status and future additions
 1:Adding Quick and Shell sort exercises.  
 2:May be placing an element back to its original position if placed at wrong place.  
+3:Adding facility of auto sorting on scrolling hence adding making visualization better.
 
 ## Technology used
 1:Angular 8  
